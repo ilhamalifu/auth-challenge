@@ -1,12 +1,10 @@
-const { User } = require ("../database/models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const authService = require("./auth.service")
 
 const authUser = async (req, res) => {
         const { email, password } = req.body ;
-        const existUser = await User.findOne({ where: {email}, raw: true});
-        // kalau gaada response not found
-        if(!existUser) return res.status(404).json({message: "User not found!"});
+        const existUser = await authService.authUser(email,password);
         
     
         // kalau ada, cek passwordnya

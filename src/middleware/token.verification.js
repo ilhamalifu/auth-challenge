@@ -1,7 +1,7 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-const tokenVerification = (req,res,next) => {
+const tokenVerification = async (req,res,next) => {
     // mengambil token yang ada dalam header
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
@@ -11,7 +11,7 @@ const tokenVerification = (req,res,next) => {
 
     try {
         // cek token dan masukkan data user dalam request
-        const user = jwt.verify(token, process.env.JWT_SECRET_TOKEN);
+        const user = await jwt.verify(token, process.env.JWT_SECRET_TOKEN);
         req.auth = user;
         next();
       } catch (error) {

@@ -1,5 +1,5 @@
 GET http://localhost:8080
-Authorization: 112121212
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY1OTg3OTY3MywiZXhwIjoxNjU5OTY2MDczfQ.yf7pdBuuX8kkBoKuhyyWcduFx-CjG1y6Zk-ow5kN19o
 
 ###
 POST http://localhost:8080/user/registration
