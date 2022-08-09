@@ -24,11 +24,10 @@ Content-Type: application/json
 ### api create post
 POST http://localhost:8080/user/post
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDAzOTI5MiwiZXhwIjoxNjYwMTI1NjkyfQ.LQXl7xKFNRAaquKYcTGP24dthaVzxVAzJCS_XqKB22Q
 
 {
     "title" : "Artikel Satu",
-    "image" : "www.google.com",
-    "body" : "Lorem Ipsum",
-    "user_id" : "1"
-
+    "image" : "askasasas",
+    "body" : "LoremIpsum"
 }

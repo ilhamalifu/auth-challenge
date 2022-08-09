@@ -4,7 +4,7 @@ const tokenVerification = require("../middleware/token.verification")
 const postController = require("./post.controller")
 
 // create post
-postRouter.post("/post/createPost", tokenVerification, postController.createPost)
+postRouter.post("/user/post", tokenVerification, postController.createPost)
 
 // Edit Post
 
