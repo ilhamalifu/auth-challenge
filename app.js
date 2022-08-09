@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const userRouter = require("./src/user/user.route");
-const tokenVerification = require("./middleware/token.verification")
+const tokenVerification = require("./src/middleware/token.verification")
 const authRouter = require("./src/auth/auth.route");
 const app = express();
 
@@ -9,7 +9,7 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json());
 
-app.get("/",tokenVerification, (req, res) => {
+app.get("/", tokenVerification , (req, res) => {
   res.send("Hello World!");
 });
 
