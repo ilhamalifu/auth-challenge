@@ -1,7 +1,8 @@
+###
 GET http://localhost:8080
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDAzMzgxMCwiZXhwIjoxNjYwMTIwMjEwfQ.YEFpS1bzTf6XtYjBVle6RDprbBwoux9IV7gbhxO028A
 
-###
+### api register
 POST http://localhost:8080/user/registration
 Content-Type: application/json
 
@@ -11,11 +12,23 @@ Content-Type: application/json
     "password" : "123456"
 }
 
-###
+### api login
 POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
     "email" : "ilhamalip@gmail.com",
     "password" : "123456"
+}
+
+### api create post
+POST http://localhost:8080/user/post
+Content-Type: application/json
+
+{
+    "title" : "Artikel Satu",
+    "image" : "www.google.com",
+    "body" : "Lorem Ipsum",
+    "user_id" : "1"
+
 }

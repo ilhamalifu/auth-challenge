@@ -3,6 +3,7 @@ const express = require("express");
 const userRouter = require("./src/user/user.route");
 const tokenVerification = require("./src/middleware/token.verification")
 const authRouter = require("./src/auth/auth.route");
+const postRouter = require("./src/post/post.route");
 const app = express();
 
 const port = process.env.PORT || 8080;
@@ -15,6 +16,7 @@ app.get("/", tokenVerification , (req, res) => {
 
 app.use(userRouter);
 app.use(authRouter);
+app.use(postRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
