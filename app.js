@@ -14,9 +14,13 @@ app.get("/", tokenVerification , (req, res) => {
   res.send("Hello World!");
 });
 
+app.get("/posts", (req,res)=> {
+  res.send("")
+})
+
+app.use(postRouter);
 app.use(userRouter);
 app.use(authRouter);
-app.use(postRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

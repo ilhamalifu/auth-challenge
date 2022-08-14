@@ -1,14 +1,14 @@
 ###
 GET http://localhost:8080
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDAzMzgxMCwiZXhwIjoxNjYwMTIwMjEwfQ.YEFpS1bzTf6XtYjBVle6RDprbBwoux9IV7gbhxO028A
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQwNzY4NiwiZXhwIjoxNjYwNDk0MDg2fQ.Kt0ubbUs6_HmI68Ml-krjzH1vZh69-cbKklDvibe7hE
 
 ### api register
 POST http://localhost:8080/user/registration
 Content-Type: application/json
 
 {
-    "fullname" : "furqon",
-    "email" : "furqon@gmail.com",
+    "fullname" : "Ilham Alif Furqon",
+    "email" : "ilhamalip@gmail.com",
     "password" : "123456"
 }
 
@@ -17,17 +17,30 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-    "email" : "ilhamalip@gmail.com",
+    "email" : "ilhamalipgmailcom",
     "password" : "123456"
 }
 
-### api create post
-POST http://localhost:8080/user/post
+### api createpost
+POST  http://localhost:8080/posts/createpost
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDAzOTI5MiwiZXhwIjoxNjYwMTI1NjkyfQ.LQXl7xKFNRAaquKYcTGP24dthaVzxVAzJCS_XqKB22Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQ2OTU1OSwiZXhwIjoxNjYwNTU1OTU5fQ.PMkA7sO_XsuVOPmJzot0t89Rh0hDqteoD_w4lY8L6xM
 
 {
-    "title" : "Artikel Satu",
+    "title" : "Artikel Dua",
     "image" : "askasasas",
-    "body" : "LoremIpsum"
+    "body" : "LoremIpsumDolor"
 }
+
+### api get all post
+GET http://localhost:8080/posts
+Content-Type: application/json
+
+### api get one post
+GET http://localhost:8080/posts/:postId
+Content-Type: application/json
+
+### api edit post
+PUT  http://localhost:8080/posts/editPost/:postId
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQ2OTU1OSwiZXhwIjoxNjYwNTU1OTU5fQ.PMkA7sO_XsuVOPmJzot0t89Rh0hDqteoD_w4lY8L6xM
