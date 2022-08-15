@@ -12,10 +12,10 @@ const getAllPost = async (q) => {
 };
 
 // get one post
-const getOnePost = async (postId) => {
+const getOnePost = async (post_id) => {
     return await Post.findOne({
         where : {
-            id: postId,
+            id: post_id,
         },
     });
 };
@@ -32,7 +32,8 @@ const createPost = async ({title,image,body,user_id}) => {
 };
 
 // edit post
-const editPost = async ({postId, title, image, body, user_id}) => {
+const editPost = async ({title, image, body, post_id}) => {
+  
     return await Post.update({
         title,
         image,
@@ -40,10 +41,7 @@ const editPost = async ({postId, title, image, body, user_id}) => {
     },
     {
         where: {
-          [Op.and]: {
-            id: postId,
-            userId: authUser,
-          },
+            id: post_id,
         },
         returning: true,
       }

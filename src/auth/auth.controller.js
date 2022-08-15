@@ -5,8 +5,9 @@ const authService = require("./auth.service")
 const authUser = async (req, res) => {
         const { email, password } = req.body ;
         const existUser = await authService.authUser(email,password);
-        
-    
+        if (!existUser) {
+          return res.send("User tidak ditemukan")
+        }
         // kalau ada, cek passwordnya
         const isPasswordCorrect = await bcrypt.compare(password, existUser.password);
         if(isPasswordCorrect){

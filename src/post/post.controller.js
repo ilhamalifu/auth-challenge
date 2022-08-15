@@ -3,6 +3,7 @@ const postService = require("./post.service")
 // Get All Post
 const getAllPost = async (req,res) => {
     const {q} = req.query;
+    console.log({q})
     try {
         const post = await postService.getAllPost(q)
         if(post && postService.length > 0);
@@ -14,9 +15,9 @@ const getAllPost = async (req,res) => {
 
 // Get One Post
 const getOnePost = async (req,res) => {
-    const {postId} = req.params;
+    const {post_id} = req.params;
     try {
-        const posts = await postService.getOnePost(postId);
+        const posts = await postService.getOnePost(post_id);
         res.json(posts)
     } catch (error) {
         res.json(error);
@@ -44,23 +45,21 @@ const createPost = async (req,res) => {
 
 // Edit Post
 const editPost = async (req,res) => {
-    const {postId} = req.params;
     const {title,image,body} = req.body;
+    const {post_id} = req.params;
     const authUser = req.auth;
-    const user_id = authUser.id
     const post = {
-        postId,
         title,
         image,
         body,
-        user_id
+        post_id,
+        authUser
     };
     try {
           const editPost = await postService.editPost(post);
-          if (editPost) res.status(200).json(editPost);
-          else res.status(401).json({ message: "Unauthorized" });
+          res.send(editPost);
       } catch (error) {
-        res.status(500).json("Internal Server Error!");
+        res.json(error);
       }
 }
 

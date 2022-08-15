@@ -17,7 +17,7 @@ POST http://localhost:8080/auth/login
 Content-Type: application/json
 
 {
-    "email" : "ilhamalipgmailcom",
+    "email" : "ilhamalip@gmail.com",
     "password" : "123456"
 }
 
@@ -37,10 +37,16 @@ GET http://localhost:8080/posts
 Content-Type: application/json
 
 ### api get one post
-GET http://localhost:8080/posts/:postId
+GET http://localhost:8080/posts/:post_id
 Content-Type: application/json
 
 ### api edit post
-PUT  http://localhost:8080/posts/editPost/:postId
+PUT  http://localhost:8080/posts/editPost/:post_id
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQ2OTU1OSwiZXhwIjoxNjYwNTU1OTU5fQ.PMkA7sO_XsuVOPmJzot0t89Rh0hDqteoD_w4lY8L6xM
+
+{
+    "title" : "adadad",
+    "image" : "askasasas",
+    "body" : "LoremIpsumDolor",
+}
