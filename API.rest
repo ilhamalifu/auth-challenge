@@ -1,6 +1,6 @@
 ###
 GET http://localhost:8080
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQwNzY4NiwiZXhwIjoxNjYwNDk0MDg2fQ.Kt0ubbUs6_HmI68Ml-krjzH1vZh69-cbKklDvibe7hE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDcwMDU3MCwiZXhwIjoxNjYwNzg2OTcwfQ.QG4lvq99dR9Yb58waw0AkOQyZ4b8GRawEceaE-zAJ5o
 
 ### api register
 POST http://localhost:8080/user/registration
@@ -22,9 +22,9 @@ Content-Type: application/json
 }
 
 ### api createpost
-POST  http://localhost:8080/posts/createpost
+POST  http://localhost:8080/post/createpost
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQ2OTU1OSwiZXhwIjoxNjYwNTU1OTU5fQ.PMkA7sO_XsuVOPmJzot0t89Rh0hDqteoD_w4lY8L6xM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDcwMDU3MCwiZXhwIjoxNjYwNzg2OTcwfQ.QG4lvq99dR9Yb58waw0AkOQyZ4b8GRawEceaE-zAJ5o
 
 {
     "title" : "Artikel Dua",
@@ -33,17 +33,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hb
 }
 
 ### api get all post
-GET http://localhost:8080/posts
+GET http://localhost:8080/post/getallpost
 Content-Type: application/json
 
 ### api get one post
-GET http://localhost:8080/posts/:post_id
-Content-Type: application/json
+GET http://localhost:8080/post/:postId
+
 
 ### api edit post
-PUT  http://localhost:8080/posts/editPost/:post_id
+PUT  http://localhost:8080/post/editpost/:pos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDQ2OTU1OSwiZXhwIjoxNjYwNTU1OTU5fQ.PMkA7sO_XsuVOPmJzot0t89Rh0hDqteoD_w4lY8L6xM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJJbGhhbSBBbGlmIEZ1cnFvbiIsImVtYWlsIjoiaWxoYW1hbGlwQGdtYWlsLmNvbSIsImlhdCI6MTY2MDcwMDU3MCwiZXhwIjoxNjYwNzg2OTcwfQ.QG4lvq99dR9Yb58waw0AkOQyZ4b8GRawEceaE-zAJ5o
 
 {
     "title" : "adadad",

@@ -2,26 +2,18 @@ const postService = require("./post.service")
 
 // Get All Post
 const getAllPost = async (req,res) => {
-    const {q} = req.query;
-    console.log({q})
+    const {writer,title,limit,page,order} = req.query;
+    const tempQuery = {
+        writer,title,limit,order,page
+    }
+    console.log(tempQuery)
     try {
-        const post = await postService.getAllPost(q)
-        if(post && postService.length > 0);
-        return res.json(post);
+        const posts = await postService.getAllPost(tempQuery);
+        res.json(posts);
     } catch (error) {
-        return res.status(error)
-    };
-};
-
-// Get One Post
-const getOnePost = async (req,res) => {
-    const {post_id} = req.params;
-    try {
-        const posts = await postService.getOnePost(post_id);
-        res.json(posts)
-    } catch (error) {
-        res.json(error);
-    };
+        res.json(error)
+    }
+    
 };
 
 // Create Post
@@ -45,13 +37,13 @@ const createPost = async (req,res) => {
 
 // Edit Post
 const editPost = async (req,res) => {
-    const {title,image,body} = req.body;
+    const {title,body,image} = req.body;
     const {post_id} = req.params;
     const authUser = req.auth;
     const post = {
         title,
-        image,
         body,
+        image,
         post_id,
         authUser
     };
@@ -61,6 +53,18 @@ const editPost = async (req,res) => {
       } catch (error) {
         res.json(error);
       }
+}
+
+// Get One Post
+const getOnePost = async (req,res) => {
+    const {post_id} = req.params;
+    try {
+        const post = await postService.getOnePost(post_id);
+        res.json(post);
+    } catch (error) {
+        res.json(error)
+    }
+    
 }
 
 const postController = {

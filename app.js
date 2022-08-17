@@ -14,12 +14,10 @@ app.use(express.json());
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.get("/", tokenVerification , (req, res) => {
-  res.send("Hello World!");
+  const authUser = req.auth;
+   // res.send("Hello World!");
+   res.json({halo : authUser.email})
 });
-
-app.get("/posts", (req,res)=> {
-  res.send("")
-})
 
 app.use(postRouter);
 app.use(userRouter);
